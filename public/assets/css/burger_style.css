@@ -1,6 +1,55 @@
 body{ 
-	background-color: red; 
-	color:yellow;
-	font-family: sans-serif;
-	font-weight: bold;
+	background-color: black; 
+}
+
+#title{
+	text-align: center;	
+}
+
+#titleText{
+	color:#cc880f;
+	font-family: Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", "sans serif";
+	font-size: 80px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+}
+
+.red{
+	text-align: center;
+}
+
+.redText{
+	background-color:red;
+	color:white;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, sans-serif;
+	font-size: 24px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 26.4px;
+}
+
+ .ham{
+ 	width: 150px;
+	height: 30px;
+	background-image: none;
+	background-color: silver;
+	padding:5px;
+	margin:5px;
+	display: inline-block;
+	color: red;
+ }
+
+.control{
+	margin: 5px;
+}
+
+.theCenter{
+	text-align: center;
+}
+
+form{
+	display: inline-block; 
+
 }

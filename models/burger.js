@@ -2,18 +2,22 @@ var orm = require("../config/orm.js");
 
 
 var burgerOp = {
-	all: function() {
-		orm.selectAll();
+	all: function(cb) {
+		orm.selectAll(function(res){
+			cb(res);
+		});
 		},
 
 	insert: function(burger){
 		orm.insertOne(burger);
 		},
 
-	update: function (burguer, boolean){
-		orm.updateOne(burguer, boolean);
+	update: function (id, boolean, cb){
+		orm.updateOne(id, boolean);
+		// cb(res);
 		}
 };
-module.exports = burguerOp;
+module.exports = burgerOp;
 
+		
 

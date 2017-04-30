@@ -1,10 +1,44 @@
-<h1> Are you hungry???? </h1>
+<div id="title">
+	<h1 id="titleText"> BURGERS!! </h1>
+</div> 
 
-<h2> Coose ypur favorite Hamburger</h2>
+<div class="red">
+	<h2 class="redText"> Choose your favorite Hamburger</h2>
+</div>
 
+<div class="container">
+	<div class="col-lg-4">
+		{{#each hamburgers}}
+			{{#unless this.devoured}}
+				<div class="well ham">
+					{{this.burger_name}}
+				</div>
 
-<ul>
-	{{#each hamburgers}}
+				<form method="POST" action = "/update?_method=PUT">
+				<input  name="id" value={{this.id}} type="hidden">
+				<button type="submit" class= "btn-danger">Devour</button>
+				</form>
+			{{/unless}}
+		{{/each}}
+	</div>	
 
-		<li>
-			{{this.}}
+	<div class="col-lg-4">
+		<input type="text" name="newburger" class="control">
+		<br>
+		<div class="theCenter">
+			<input type="submit" class="control">
+		</div>
+	</div>
+
+	<div class="col-lg-4">
+			    {{#each hamburgers}}
+			{{#if this.devoured}}
+				<div class="well ham">
+					{{this.burger_name}}
+				</div>
+			{{/if}}
+		{{/each}}
+			    
+	</div>
+
+</div>

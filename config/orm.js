@@ -2,7 +2,7 @@ var connection = require("../config/connection.js");
 //why is ../ instead of ./ Both are on the same dierectory???
 
 var orm = {
-	selectAll: function (){
+	selectAll: function (cb){
 		var queryString = "SELECT * FROM burgers;";
 		// DO I NEED TO INCLUDE + ";" ??????????
 
@@ -11,6 +11,7 @@ var orm = {
 			throw err;
 			}
 			console.log(result);
+			cb(result);
 		});
 	},
 
@@ -24,13 +25,14 @@ var orm = {
 		});
 	}, 
 
-	updateOne: function(burger, boolean){
-		queryString = "UPDATE burgers SET ?? WHERE ?";
-		connection.query(queryString, [{devoured: boolean}, {burger_name: burger}],function(err, result){
+	updateOne: function(id, boolean,cb){
+		queryString = "UPDATE burgers SET ? WHERE ?";
+		connection.query(queryString, [{devoured: boolean}, {id: id}],function(err, result){
 			if(err){
 				throw err;
 			}
 			console.log(result);
+			// cb(result);
 		});
 	}
 

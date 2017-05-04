@@ -8,9 +8,9 @@ var burgerOp = {
 		});
 		},
 
-	insert: function(burger){
-		orm.insertOne(burger);
-		},
+	create: function (name, cb){
+		orm.create(name, cb);
+	},
 
 	update: function (id, boolean, cb){
 		orm.updateOne(id, boolean);
@@ -18,6 +18,3 @@ var burgerOp = {
 		}
 };
 module.exports = burgerOp;
-
-		
-

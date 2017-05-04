@@ -15,15 +15,13 @@ var orm = {
 		});
 	},
 
-	insertOne: function(burger){
-		queryString = "INSERT INTO burgers (burger_name, devoured) VALUES ?,?";
-		connection.query(queryString, [burger, false], function(err, result){
-			if(err){
-				throw err;
-			}
-			console.log("Ther is a new burger");
-		});
-	}, 
+	create: function(val, cb){
+		queryString = "INSERT INTO burgers SET ?"
+		connection.query(queryString, {burger_name:val, devoured:false}, function(err, result){
+			if(err) throw err;
+			cb(result);
+		})
+	},
 
 	updateOne: function(id, boolean,cb){
 		queryString = "UPDATE burgers SET ? WHERE ?";

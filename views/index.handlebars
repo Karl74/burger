@@ -1,6 +1,6 @@
 <div id="title">
 	<h1 id="titleText"> BURGERS!! </h1>
-</div> 
+</div>
 
 <div class="red">
 	<h2 class="redText"> Choose your favorite Hamburger</h2>
@@ -20,15 +20,15 @@
 				</form>
 			{{/unless}}
 		{{/each}}
-	</div>	
+	</div>
 
 	<div class="col-lg-4">
-		<form action="/" method="POST">	
-			<input type="text" name="newburger" class="control" id="name">
-			<br>
-			<div class="theCenter">
-				<input type="submit" class="control" id="newBurger">
-			</div>
+		<form action="/burgers/create" method="POST">
+			<input type="text" name="burger_name" class=" form control" id="enter_text"
+			value = "">
+
+			<button type="submit" class=" btn btn-primary control" id="text_enter-buton">Submit
+				</button>
 		</form>
 	</div>
 
@@ -40,7 +40,7 @@
 				</div>
 			{{/if}}
 		{{/each}}
-			    
+
 	</div>
 
 </div>
